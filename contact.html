@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JrEditsate | تماس با من</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(212,175,55,0.08), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(20,50,100,0.25), transparent 35%),
+        #07111f;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    header {
+      width: 100%;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7,17,31,0.78);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(212,175,55,0.12);
+    }
+
+    .logo {
+      color: #d8b24c;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #d8b24c;
+    }
+
+    .hero {
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: rgba(212,175,55,0.08);
+      border-radius: 50%;
+      filter: blur(70px);
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 9px 18px;
+      border: 1px solid rgba(216,178,76,0.4);
+      border-radius: 50px;
+      color: #d8b24c;
+      font-size: 13px;
+      margin-bottom: 22px;
+      background: rgba(216,178,76,0.05);
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.25;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #d8b24c;
+    }
+
+    .hero p {
+      color: #b8c0cc;
+      font-size: 17px;
+      line-height: 2;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact-section {
+      max-width: 1050px;
+      margin: auto;
+      padding: 30px 20px 90px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .contact-card {
+      padding: 40px 30px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(216,178,76,0.16);
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.25),
+        inset 0 0 30px rgba(255,255,255,0.015);
+    }
+
+    .contact-card h2 {
+      color: #d8b24c;
+      font-size: 26px;
+      margin-bottom: 25px;
+    }
+
+    .contact-card > p {
+      color: #aeb7c4;
+      line-height: 2;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 18px;
+      margin-bottom: 15px;
+      border-radius: 18px;
+      background: rgba(4,14,27,0.55);
+      border: 1px solid rgba(216,178,76,0.10);
+      transition: 0.3s;
+    }
+
+    .contact-item:hover {
+      transform: translateX(-5px);
+      border-color: rgba(216,178,76,0.4);
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(216,178,76,0.08);
+      border: 1px solid rgba(216,178,76,0.2);
+      font-size: 22px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .contact-info span {
+      color: #7f8997;
+      font-size: 12px;
+    }
+
+    .contact-info strong {
+      color: #fff;
+      font-size: 15px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .contact-info a {
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .contact-info a:hover {
+      color: #d8b24c;
+    }
+
+    .social-box {
+      margin-top: 20px;
+      padding: 25px;
+      border-radius: 22px;
+      background: rgba(216,178,76,0.035);
+      border: 1px solid rgba(216,178,76,0.12);
+    }
+
+    .social-box h3 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .social-link {
+      display: block;
+      padding: 13px 18px;
+      margin-top: 10px;
+      border-radius: 13px;
+      background: rgba(4,14,27,0.65);
+      border: 1px solid rgba(216,178,76,0.10);
+      color: #c8ced7;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .social-link:hover {
+      color: #d8b24c;
+      border-color: rgba(216,178,76,0.35);
+      transform: translateX(-4px);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      color: #ddd;
+      font-size: 14px;
+      margin-bottom: 9px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px 17px;
+      border-radius: 14px;
+      border: 1px solid rgba(216,178,76,0.18);
+      outline: none;
+      background: rgba(4,14,27,0.8);
+      color: #fff;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #687384;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: rgba(216,178,76,0.65);
+      box-shadow: 0 0 0 3px rgba(216,178,76,0.06);
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+      line-height: 1.9;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #d8b24c, #a98525);
+      color: #07111f;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 10px 30px rgba(216,178,76,0.18);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(216,178,76,0.28);
+    }
+
+    .direct-contact {
+      max-width: 1050px;
+      margin: 0 auto 90px;
+      padding: 0 20px;
+    }
+
+    .direct-box {
+      padding: 40px;
+      text-align: center;
+      border-radius: 30px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(18,42,73,0.75),
+          rgba(5,17,31,0.9)
+        );
+      border: 1px solid rgba(216,178,76,0.18);
+    }
+
+    .direct-box h2 {
+      color: #d8b24c;
+      margin-bottom: 15px;
+      font-size: 27px;
+    }
+
+    .direct-box p {
+      color: #aeb7c4;
+      line-height: 2;
+      margin-bottom: 25px;
+    }
+
+    .phone-btn {
+      display: inline-block;
+      padding: 14px 30px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #d8b24c, #a98525);
+      color: #07111f;
+      text-decoration: none;
+      font-weight: bold;
+      direction: ltr;
+      transition: 0.3s;
+    }
+
+    .phone-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    footer {
+      padding: 35px 20px;
+      text-align: center;
+      color: #7f8997;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #d8b24c;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 48vh;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .contact-card {
+        padding: 30px 20px;
+      }
+
+      .direct-box {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <div class="logo">
+      JrEditsate
+    </div>
+
+    <nav>
+      <a href="index.html">خانه</a>
+      <a href="services.html">خدمات</a>
+      <a href="pricing.html">تعرفه‌ها</a>
+      <a href="about.html">درباره من</a>
+      <a href="cooperation.html">همکاری</a>
+      <a href="contact.html">تماس</a>
+    </nav>
+
+  </header>
+
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        ارتباط با JrEditsate
+      </div>
+
+      <h1>
+        با من در<br>
+        <span>ارتباط باش</span>
+      </h1>
+
+      <p>
+        اگر درباره طراحی سایت، قیمت، امکانات پروژه یا روند همکاری
+        سوالی داری، می‌تونی از راه‌های ارتباطی زیر با من در تماس باشی.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="contact-section">
+
+    <div class="contact-grid">
+
+
+      <!-- اطلاعات تماس -->
+
+      <div class="contact-card">
+
+        <h2>
+          راه‌های ارتباطی
+        </h2>
+
+        <p>
+          برای شروع همکاری یا دریافت اطلاعات بیشتر،
+          می‌تونی از طریق یکی از راه‌های زیر با من ارتباط بگیری.
+        </p>
+
+
+        <div class="contact-item">
+
+          <div class="contact-icon">
+            📞
+          </div>
+
+          <div class="contact-info">
+
+            <span>
+              شماره تماس
+            </span>
+
+            <strong>
+              09964243565
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <div class="contact-icon">
+            💬
+          </div>
+
+          <div class="contact-info">
+
+            <span>
+              واتساپ
+            </span>
+
+            <strong>
+              <a
+                href="https://wa.me/989964243565"
+                target="_blank"
+              >
+                ارتباط در واتساپ
+              </a>
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="social-box">
+
+          <h3>
+            شبکه‌های اجتماعی
+          </h3>
+
+          <a
+            class="social-link"
+            href="https://instagram.com/aaryan_jrr17"
+            target="_blank"
+          >
+            📷 اینستاگرام — @aaryan_jrr17
+          </a>
+
+          <a
+            class="social-link"
+            href="https://rubika.ir/09964243565"
+            target="_blank"
+          >
+            💬 روبیکا — ارتباط مستقیم
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- فرم تماس -->
+
+      <div class="contact-card">
+
+        <h2>
+          ارسال پیام
+        </h2>
+
+        <p>
+          اطلاعاتت رو وارد کن و پیام خودت رو برام بنویس.
+        </p>
+
+
+        <form id="contactForm">
+
+          <div class="form-group">
+
+            <label for="name">
+              نام و نام خانوادگی
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              placeholder="نام و نام خانوادگی"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="phone">
+              شماره تماس
+            </label>
+
+            <input
+              type="tel"
+              id="phone"
+              placeholder="شماره تماس"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="message">
+              پیام شما
+            </label>
+
+            <textarea
+              id="message"
+              placeholder="پیامت رو اینجا بنویس..."
+              required
+            ></textarea>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="submit-btn"
+          >
+            ارسال پیام
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="direct-contact">
+
+    <div class="direct-box">
+
+      <h2>
+        برای شروع پروژه آماده‌ای؟
+      </h2>
+
+      <p>
+        اگر قصد طراحی سایت داری، می‌تونی مستقیماً با من تماس بگیری
+        یا درخواست شروع پروژه رو ثبت کنی.
+      </p>
+
+      <a
+        href="cooperation.html"
+        class="phone-btn"
+      >
+        شروع پروژه
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    Designed & Developed by
+    <strong>JrEditsate</strong>
+
+  </footer>
+
+
+  <script>
+
+    document
+      .getElementById("contactForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const phone = document.getElementById("phone").value;
+        const message = document.getElementById("message").value;
+
+        const whatsappMessage =
+          "سلام، من از طریق سایت JrEditsate پیام می‌دم.%0A%0A" +
+          "شماره تماس: " + phone + "%0A" +
+          "پیام: " + message;
+
+        window.open(
+          "https://wa.me/989964243565?text=" + whatsappMessage,
+          "_blank"
+        );
+
+      });
+
+  </script>
+
+</body>
+</html>

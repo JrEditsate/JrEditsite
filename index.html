@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>JrEditsate | طراحی سایت حرفه‌ای</title>
+<meta name="description" content="JrEditsate | طراحی حرفه‌ای سایت، طراحی سایت شرکتی، فروشگاهی، شخصی و خدماتی">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Tahoma, Arial, sans-serif;
+        background:
+            radial-gradient(circle at 20% 20%, rgba(212,175,55,0.08), transparent 30%),
+            radial-gradient(circle at 80% 70%, rgba(20,50,100,0.25), transparent 35%),
+            #07111f;
+        color: #ffffff;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+        width: 100%;
+        padding: 22px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        background: rgba(7,17,31,0.75);
+        backdrop-filter: blur(15px);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        color: #d8b24c;
+        font-size: 27px;
+        font-weight: 900;
+        letter-spacing: 1px;
+    }
+
+    nav {
+        display: flex;
+        gap: 28px;
+    }
+
+    nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #d8b24c;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+        min-height: 88vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 70px 20px;
+        position: relative;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        background: rgba(216,178,76,0.07);
+        border-radius: 50%;
+        filter: blur(80px);
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero-content {
+        position: relative;
+        max-width: 900px;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 9px 18px;
+        border: 1px solid rgba(216,178,76,0.5);
+        border-radius: 50px;
+        color: #d8b24c;
+        font-size: 13px;
+        margin-bottom: 25px;
+        background: rgba(216,178,76,0.05);
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 7vw, 82px);
+        line-height: 1.1;
+        margin-bottom: 25px;
+        font-weight: 900;
+    }
+
+    .hero h1 span {
+        color: #d8b24c;
+    }
+
+    .hero p {
+        color: #b7c0cd;
+        font-size: 18px;
+        line-height: 2;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .hero-buttons {
+        margin-top: 35px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #d8b24c, #f1d77c);
+        color: #07111f;
+        box-shadow: 0 10px 35px rgba(216,178,76,0.2);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 40px rgba(216,178,76,0.35);
+    }
+
+    .btn-secondary {
+        border: 1px solid rgba(255,255,255,0.2);
+        color: white;
+    }
+
+    .btn-secondary:hover {
+        border-color: #d8b24c;
+        color: #d8b24c;
+    }
+
+    /* ================= MAIN MENU CIRCLES ================= */
+
+    .sections {
+        padding: 80px 7% 120px;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+
+    .section-title span {
+        color: #d8b24c;
+    }
+
+    .section-subtitle {
+        color: #8995a5;
+        margin-bottom: 55px;
+    }
+
+    .circle-grid {
+        max-width: 1050px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 35px;
+        justify-items: center;
+    }
+
+    .circle-card {
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        text-decoration: none;
+        color: white;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        background:
+            radial-gradient(circle at 35% 25%, rgba(255,255,255,0.12), transparent 25%),
+            linear-gradient(145deg, #10243d, #07111f);
+
+        border: 1px solid rgba(216,178,76,0.35);
+
+        box-shadow:
+            10px 10px 25px rgba(0,0,0,0.35),
+            inset -8px -8px 20px rgba(0,0,0,0.35),
+            inset 5px 5px 15px rgba(255,255,255,0.04);
+
+        transition: 0.4s;
+    }
+
+    .circle-card:hover {
+        transform: translateY(-12px) scale(1.04);
+        border-color: #d8b24c;
+        box-shadow:
+            0 20px 50px rgba(0,0,0,0.45),
+            0 0 35px rgba(216,178,76,0.15);
+    }
+
+    /* ================= GLASS ICON ================= */
+
+    .circle-icon {
+        width: 58px;
+        height: 58px;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 14px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255,255,255,0.14),
+                rgba(255,255,255,0.035)
+            );
+
+        border: 1px solid rgba(255,255,255,0.18);
+
+        box-shadow:
+            inset 0 1px 1px rgba(255,255,255,0.16),
+            0 8px 20px rgba(0,0,0,0.25);
+
+        backdrop-filter: blur(10px);
+
+        color: #d8b24c;
+        font-size: 25px;
+    }
+
+    .circle-card h3 {
+        font-size: 17px;
+        margin-bottom: 7px;
+    }
+
+    .circle-card small {
+        color: #8e9aaa;
+        font-size: 11px;
+    }
+
+    /* ================= ABOUT PREVIEW ================= */
+
+    .about-preview {
+        max-width: 1000px;
+        margin: 0 auto 100px;
+        padding: 50px;
+        border-radius: 30px;
+        background: rgba(255,255,255,0.035);
+        border: 1px solid rgba(255,255,255,0.08);
+        text-align: center;
+    }
+
+    .about-preview h2 {
+        margin-bottom: 20px;
+    }
+
+    .about-preview h2 span {
+        color: #d8b24c;
+    }
+
+    .about-preview p {
+        color: #aab4c1;
+        line-height: 2.2;
+    }
+
+    /* ================= CTA ================= */
+
+    .cta {
+        padding: 90px 20px;
+        text-align: center;
+        background:
+            linear-gradient(rgba(216,178,76,0.04), rgba(216,178,76,0.04));
+        border-top: 1px solid rgba(216,178,76,0.1);
+        border-bottom: 1px solid rgba(216,178,76,0.1);
+    }
+
+    .cta h2 {
+        font-size: 40px;
+        margin-bottom: 18px;
+    }
+
+    .cta h2 span {
+        color: #d8b24c;
+    }
+
+    .cta p {
+        color: #9ca8b7;
+        margin-bottom: 30px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+        padding: 35px 20px;
+        text-align: center;
+        color: #718092;
+        font-size: 13px;
+    }
+
+    footer strong {
+        color: #d8b24c;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 900px) {
+
+        header {
+            padding: 18px 5%;
+        }
+
+        nav {
+            display: none;
+        }
+
+        .circle-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .circle-card {
+            width: 155px;
+            height: 155px;
+        }
+
+        .circle-icon {
+            width: 48px;
+            height: 48px;
+            font-size: 21px;
+            border-radius: 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+
+        .hero {
+            min-height: 80vh;
+        }
+
+        .hero p {
+            font-size: 15px;
+        }
+
+        .circle-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .circle-card {
+            width: 140px;
+            height: 140px;
+        }
+
+        .circle-icon {
+            width: 44px;
+            height: 44px;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .circle-card h3 {
+            font-size: 14px;
+        }
+
+        .circle-card small {
+            display: none;
+        }
+
+        .about-preview {
+            padding: 30px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+```
+<div class="logo">
+    JrEditsate
+</div>
+
+<nav>
+    <a href="index.html">خانه</a>
+    <a href="services.html">خدمات</a>
+    <a href="pricing.html">تعرفه‌ها</a>
+    <a href="about.html">درباره من</a>
+    <a href="contact.html">تماس</a>
+</nav>
+```
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+```
+<div class="hero-content">
+
+    <div class="badge">
+        طراحی حرفه‌ای سایت
+    </div>
+
+    <h1>
+        سایتت رو
+        <span>حرفه‌ای</span>
+        بساز
+    </h1>
+
+    <p>
+        در JrEditsate وب‌سایت‌هایی مدرن، سریع و حرفه‌ای
+        برای کسب‌وکارها و برندها طراحی می‌کنیم؛
+        با تمرکز روی ظاهر، تجربه کاربری و جذب مشتری.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="contact.html" class="btn btn-primary">
+            درخواست طراحی سایت
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- ================= CIRCLES ================= -->
+
+<section class="sections">
+
+```
+<h2 class="section-title">
+    همه چیز برای <span>شروع</span>
+</h2>
+
+<p class="section-subtitle">
+    برای مشاهده هر بخش روی آن کلیک کنید
+</p>
+
+
+<div class="circle-grid">
+
+
+    <a href="services.html" class="circle-card">
+
+        <div class="circle-icon">⌁</div>
+
+        <h3>خدمات</h3>
+
+        <small>
+            خدمات طراحی سایت
+        </small>
+
+    </a>
+
+
+    <a href="pricing.html" class="circle-card">
+
+        <div class="circle-icon">◇</div>
+
+        <h3>تعرفه‌ها</h3>
+
+        <small>
+            پکیج‌های طراحی
+        </small>
+
+    </a>
+
+
+    <a href="about.html" class="circle-card">
+
+        <div class="circle-icon">○</div>
+
+        <h3>درباره من</h3>
+
+        <small>
+            آشنایی با آریان
+        </small>
+
+    </a>
+
+
+    <a href="contact.html" class="circle-card">
+
+        <div class="circle-icon">◌</div>
+
+        <h3>تماس</h3>
+
+        <small>
+            ارتباط با JrEditsate
+        </small>
+
+    </a>
+
+
+    <a href="contact.html" class="circle-card">
+
+        <div class="circle-icon">↗</div>
+
+        <h3>شروع پروژه</h3>
+
+        <small>
+            پروژه خودت رو شروع کن
+        </small>
+
+    </a>
+
+
+    <a href="services.html" class="circle-card">
+
+        <div class="circle-icon">▣</div>
+
+        <h3>طراحی سایت</h3>
+
+        <small>
+            طراحی حرفه‌ای
+        </small>
+
+    </a>
+
+
+    <a href="pricing.html" class="circle-card">
+
+        <div class="circle-icon">✦</div>
+
+        <h3>انتخاب پکیج</h3>
+
+        <small>
+            پکیج مناسب پروژه
+        </small>
+
+    </a>
+
+
+</div>
+```
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about-preview">
+
+```
+<h2>
+    چرا <span>JrEditsate؟</span>
+</h2>
+
+<p>
+    هدف ما ساخت سایت‌هایی نیست که فقط زیبا باشند؛
+    هدف این است که سایت شما حرفه‌ای دیده شود،
+    اعتماد ایجاد کند و به رشد کسب‌وکار شما کمک کند.
+</p>
+```
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+```
+<h2>
+    آماده‌ای <span>شروع کنیم؟</span>
+</h2>
+
+<p>
+    ایده‌ات رو بگو؛ ما مسیر ساخت سایت رو برات شروع می‌کنیم.
+</p>
+
+<a href="contact.html" class="btn btn-primary">
+    درخواست طراحی سایت
+</a>
+```
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+```
+© 2026 JrEditsate — تمامی حقوق محفوظ است.
+
+<br><br>
+
+Designed & Developed by
+<strong>JrEditsate</strong>
+```
+
+</footer>
+
+</body>
+</html>

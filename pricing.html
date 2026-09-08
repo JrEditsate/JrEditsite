@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JrEditsate | تعرفه طراحی سایت</title>
+    <meta name="description" content="تعرفه و پکیج‌های طراحی سایت JrEditsate">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(212,175,55,0.08),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(20,50,100,0.25),
+                    transparent 35%
+                ),
+                #07111f;
+
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            width: 100%;
+            padding: 22px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            background: rgba(7,17,31,0.75);
+            backdrop-filter: blur(15px);
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #d8b24c;
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d8b24c;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 58vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+            height: 450px;
+
+            background: rgba(216,178,76,0.07);
+
+            border-radius: 50%;
+
+            filter: blur(80px);
+
+            top: 5%;
+            left: 50%;
+
+            transform: translateX(-50%);
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 900px;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 9px 18px;
+
+            border: 1px solid rgba(216,178,76,0.5);
+
+            border-radius: 50px;
+
+            color: #d8b24c;
+
+            font-size: 13px;
+
+            margin-bottom: 25px;
+
+            background: rgba(216,178,76,0.05);
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 78px);
+
+            line-height: 1.1;
+
+            margin-bottom: 25px;
+
+            font-weight: 900;
+        }
+
+        .hero h1 span {
+            color: #d8b24c;
+        }
+
+        .hero p {
+            color: #b7c0cd;
+
+            font-size: 18px;
+
+            line-height: 2;
+
+            max-width: 700px;
+
+            margin: auto;
+        }
+
+
+        /* ================= PRICING ================= */
+
+        .pricing {
+            padding: 60px 7% 120px;
+
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: #d8b24c;
+        }
+
+        .section-subtitle {
+            color: #8995a5;
+
+            margin-bottom: 55px;
+        }
+
+
+        /* ================= PRICING GRID ================= */
+
+        .pricing-grid {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 25px;
+
+            align-items: stretch;
+        }
+
+
+        /* ================= PRICE CARD ================= */
+
+        .price-card {
+            position: relative;
+
+            padding: 40px 25px;
+
+            border-radius: 30px;
+
+            background:
+                radial-gradient(
+                    circle at 35% 20%,
+                    rgba(255,255,255,0.10),
+                    transparent 25%
+                ),
+                linear-gradient(
+                    145deg,
+                    #10243d,
+                    #07111f
+                );
+
+            border: 1px solid rgba(216,178,76,0.30);
+
+            box-shadow:
+                10px 10px 25px rgba(0,0,0,0.35),
+                inset -8px -8px 20px rgba(0,0,0,0.35),
+                inset 5px 5px 15px rgba(255,255,255,0.04);
+
+            transition: 0.4s;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+
+            border-color: #d8b24c;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.45),
+                0 0 35px rgba(216,178,76,0.15);
+        }
+
+
+        /* ================= FEATURED ================= */
+
+        .featured {
+            border-color: #d8b24c;
+
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 20px 55px rgba(0,0,0,0.45),
+                0 0 35px rgba(216,178,76,0.12);
+        }
+
+        .featured:hover {
+            transform: translateY(-15px);
+        }
+
+        .popular {
+            position: absolute;
+
+            top: -14px;
+            right: 50%;
+
+            transform: translateX(50%);
+
+            padding: 7px 18px;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d8b24c,
+                    #f1d77c
+                );
+
+            color: #07111f;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            white-space: nowrap;
+        }
+
+
+        /* ================= PRICE ================= */
+
+        .price-icon {
+            font-size: 38px;
+
+            margin-bottom: 18px;
+        }
+
+        .price-card h3 {
+            font-size: 22px;
+
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #d8b24c;
+
+            font-size: 30px;
+
+            font-weight: 900;
+
+            margin-bottom: 8px;
+        }
+
+        .price span {
+            font-size: 13px;
+
+            color: #8995a5;
+
+            font-weight: normal;
+        }
+
+        .price-description {
+            color: #8e9aaa;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+            min-height: 45px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            list-style: none;
+
+            text-align: right;
+
+            margin-bottom: 30px;
+        }
+
+        .features li {
+            color: #c0c9d4;
+
+            font-size: 12px;
+
+            line-height: 2;
+
+            padding: 6px 0;
+
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .features li::before {
+            content: "✓";
+
+            color: #d8b24c;
+
+            font-weight: bold;
+
+            margin-left: 8px;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .btn {
+            display: inline-block;
+
+            width: 100%;
+
+            padding: 13px 20px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background:
+                linear-gradient(
+                    135deg,
+                    #d8b24c,
+                    #f1d77c
+                );
+
+            color: #07111f;
+
+            box-shadow:
+                0 10px 35px rgba(216,178,76,0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 40px rgba(216,178,76,0.3);
+        }
+
+
+        /* ================= NOTE ================= */
+
+        .pricing-note {
+            max-width: 850px;
+
+            margin: 70px auto 0;
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,0.035);
+
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .pricing-note h3 {
+            color: #d8b24c;
+
+            margin-bottom: 12px;
+        }
+
+        .pricing-note p {
+            color: #9ca8b7;
+
+            font-size: 13px;
+
+            line-height: 2;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+            padding: 90px 20px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(216,178,76,0.04),
+                    rgba(216,178,76,0.04)
+                );
+
+            border-top: 1px solid rgba(216,178,76,0.1);
+
+            border-bottom: 1px solid rgba(216,178,76,0.1);
+        }
+
+        .cta h2 {
+            font-size: 40px;
+
+            margin-bottom: 18px;
+        }
+
+        .cta h2 span {
+            color: #d8b24c;
+        }
+
+        .cta p {
+            color: #9ca8b7;
+
+            margin-bottom: 30px;
+
+            line-height: 2;
+        }
+
+        .cta .btn {
+            width: auto;
+
+            padding: 15px 35px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 35px 20px;
+
+            text-align: center;
+
+            color: #718092;
+
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #d8b24c;
+        }
+
+
+        /* ================= TABLET ================= */
+
+        @media (max-width: 1050px) {
+
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+
+                max-width: 750px;
+            }
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .pricing {
+                padding: 50px 5% 80px;
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            .hero {
+                min-height: 55vh;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+            }
+
+            .price-card {
+                padding: 35px 25px;
+            }
+
+            .featured {
+                transform: none;
+            }
+
+            .featured:hover {
+                transform: translateY(-10px);
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        JrEditsate
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            خانه
+        </a>
+
+        <a href="services.html">
+            خدمات
+        </a>
+
+        <a href="pricing.html">
+            تعرفه‌ها
+        </a>
+
+        <a href="about.html">
+            درباره من
+        </a>
+
+        <a href="cooperation.html">
+            همکاری
+        </a>
+
+        <a href="contact.html">
+            تماس
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            تعرفه‌های طراحی سایت
+        </div>
+
+        <h1>
+            پکیج‌های
+            <span>طراحی سایت</span>
+        </h1>
+
+        <p>
+            برای هر نوع پروژه یک پکیج مناسب در نظر گرفته‌ایم.
+            اگر نیازت با هیچ‌کدام از پکیج‌ها مطابقت ندارد،
+            امکان طراحی یک پروژه کاملاً متناسب با نیاز شما وجود دارد.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PRICING ================= -->
+
+<section class="pricing">
+
+    <h2 class="section-title">
+        انتخاب <span>پکیج مناسب</span>
+    </h2>
+
+    <p class="section-subtitle">
+        پکیج مورد نظرت رو انتخاب کن و پروژه‌ات رو شروع کن
+    </p>
+
+
+    <div class="pricing-grid">
+
+
+        <!-- ================= START ================= -->
+
+        <div class="price-card">
+
+            <div class="price-icon">
+                🌱
+            </div>
+
+            <h3>
+                شروع
+            </h3>
+
+            <div class="price">
+                ۲ میلیون
+                <span>تومان</span>
+            </div>
+
+            <p class="price-description">
+                مناسب برای سایت‌های ساده و معرفی
+            </p>
+
+            <ul class="features">
+
+                <li>
+                    طراحی اختصاصی
+                </li>
+
+                <li>
+                    صفحات اصلی سایت
+                </li>
+
+                <li>
+                    طراحی واکنش‌گرا
+                </li>
+
+                <li>
+                    فرم تماس
+                </li>
+
+                <li>
+                    طراحی مدرن
+                </li>
+
+            </ul>
+
+            <a href="cooperation.html" class="btn btn-primary">
+                انتخاب پکیج
+            </a>
+
+        </div>
+
+
+
+        <!-- ================= PROFESSIONAL ================= -->
+
+        <div class="price-card featured">
+
+            <div class="popular">
+                محبوب‌ترین انتخاب
+            </div>
+
+            <div class="price-icon">
+                🚀
+            </div>
+
+            <h3>
+                حرفه‌ای
+            </h3>
+
+            <div class="price">
+                ۵ میلیون
+                <span>تومان</span>
+            </div>
+
+            <p class="price-description">
+                مناسب برای کسب‌وکارهای حرفه‌ای
+            </p>
+
+            <ul class="features">
+
+                <li>
+                    طراحی اختصاصی و حرفه‌ای
+                </li>
+
+                <li>
+                    صفحات کامل مورد نیاز
+                </li>
+
+                <li>
+                    طراحی واکنش‌گرا
+                </li>
+
+                <li>
+                    فرم‌های مورد نیاز
+                </li>
+
+                <li>
+                    بهینه‌سازی ظاهر و تجربه کاربری
+                </li>
+
+                <li>
+                    پشتیبانی اولیه
+                </li>
+
+            </ul>
+
+            <a href="cooperation.html" class="btn btn-primary">
+                انتخاب پکیج
+            </a>
+
+        </div>
+
+
+
+        <!-- ================= SPECIAL ================= -->
+
+        <div class="price-card">
+
+            <div class="price-icon">
+                💎
+            </div>
+
+            <h3>
+                ویژه
+            </h3>
+
+            <div class="price">
+                ۷ میلیون
+                <span>تومان</span>
+            </div>
+
+            <p class="price-description">
+                مناسب برای پروژه‌های کامل‌تر
+            </p>
+
+            <ul class="features">
+
+                <li>
+                    طراحی کاملاً اختصاصی
+                </li>
+
+                <li>
+                    صفحات و بخش‌های اختصاصی
+                </li>
+
+                <li>
+                    طراحی واکنش‌گرا
+                </li>
+
+                <li>
+                    فرم‌ها و امکانات سفارشی
+                </li>
+
+                <li>
+                    طراحی حرفه‌ای رابط کاربری
+                </li>
+
+                <li>
+                    پشتیبانی و بروزرسانی اولیه
+                </li>
+
+            </ul>
+
+            <a href="cooperation.html" class="btn btn-primary">
+                انتخاب پکیج
+            </a>
+
+        </div>
+
+
+
+        <!-- ================= CUSTOM ================= -->
+
+        <div class="price-card">
+
+            <div class="price-icon">
+                👑
+            </div>
+
+            <h3>
+                اختصاصی
+            </h3>
+
+            <div class="price">
+                ۱۰ میلیون
+                <span>تومان</span>
+            </div>
+
+            <p class="price-description">
+                مناسب برای پروژه‌های کاملاً سفارشی
+            </p>
+
+            <ul class="features">
+
+                <li>
+                    طراحی کاملاً اختصاصی
+                </li>
+
+                <li>
+                    امکانات متناسب با پروژه
+                </li>
+
+                <li>
+                    طراحی حرفه‌ای UI/UX
+                </li>
+
+                <li>
+                    صفحات و بخش‌های سفارشی
+                </li>
+
+                <li>
+                    طراحی واکنش‌گرا
+                </li>
+
+                <li>
+                    پشتیبانی و بروزرسانی
+                </li>
+
+            </ul>
+
+            <a href="cooperation.html" class="btn btn-primary">
+                درخواست پکیج
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= NOTE ================= -->
+
+    <div class="pricing-note">
+
+        <h3>
+            💡 یک نکته مهم
+        </h3>
+
+        <p>
+            قیمت پکیج‌ها بر اساس امکانات پایه هر سطح تعیین شده است.
+            در پروژه‌های خاص، امکانات و نیازهای مشتری می‌تواند
+            روی قیمت نهایی تأثیر بگذارد.
+            برای دریافت قیمت دقیق پروژه خودت می‌توانی درخواست همکاری ارسال کنی.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <h2>
+        نمی‌دونی کدوم <span>پکیج</span> مناسبه؟
+    </h2>
+
+    <p>
+        مشخصات پروژه‌ات رو بفرست تا مناسب‌ترین گزینه رو بررسی کنیم.
+    </p>
+
+    <a href="cooperation.html" class="btn btn-primary">
+        شروع پروژه
+    </a>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 JrEditsate — تمامی حقوق محفوظ است.
+
+    <br><br>
+
+    Designed & Developed by
+    <strong>JrEditsate</strong>
+
+</footer>
+
+
+</body>
+</html>

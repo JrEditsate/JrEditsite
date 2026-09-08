@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JrEditsate | خدمات طراحی سایت</title>
+    <meta name="description" content="JrEditsate | خدمات حرفه‌ای طراحی و توسعه سایت‌های شرکتی، فروشگاهی، شخصی و خدماتی">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(212,175,55,0.08),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(20,50,100,0.25),
+                    transparent 35%
+                ),
+                #07111f;
+
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            width: 100%;
+            padding: 22px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            background: rgba(7,17,31,0.75);
+            backdrop-filter: blur(15px);
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #d8b24c;
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d8b24c;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 65vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+            height: 450px;
+
+            background: rgba(216,178,76,0.07);
+
+            border-radius: 50%;
+
+            filter: blur(80px);
+
+            top: 5%;
+            left: 50%;
+
+            transform: translateX(-50%);
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 900px;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 9px 18px;
+
+            border: 1px solid rgba(216,178,76,0.5);
+
+            border-radius: 50px;
+
+            color: #d8b24c;
+
+            font-size: 13px;
+
+            margin-bottom: 25px;
+
+            background: rgba(216,178,76,0.05);
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 78px);
+
+            line-height: 1.1;
+
+            margin-bottom: 25px;
+
+            font-weight: 900;
+        }
+
+        .hero h1 span {
+            color: #d8b24c;
+        }
+
+        .hero p {
+            color: #b7c0cd;
+
+            font-size: 18px;
+
+            line-height: 2;
+
+            max-width: 700px;
+
+            margin: auto;
+        }
+
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            padding: 70px 7% 120px;
+
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: #d8b24c;
+        }
+
+        .section-subtitle {
+            color: #8995a5;
+
+            margin-bottom: 55px;
+        }
+
+
+        /* ================= SERVICE GRID ================= */
+
+        .service-grid {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px;
+        }
+
+
+        /* ================= SERVICE CARD ================= */
+
+        .service-card {
+            min-height: 270px;
+
+            padding: 35px 25px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            color: white;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+
+            background:
+                radial-gradient(
+                    circle at 35% 25%,
+                    rgba(255,255,255,0.12),
+                    transparent 25%
+                ),
+                linear-gradient(
+                    145deg,
+                    #10243d,
+                    #07111f
+                );
+
+
+            border: 1px solid rgba(216,178,76,0.35);
+
+
+            box-shadow:
+                10px 10px 25px rgba(0,0,0,0.35),
+                inset -8px -8px 20px rgba(0,0,0,0.35),
+                inset 5px 5px 15px rgba(255,255,255,0.04);
+
+
+            transition: 0.4s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+
+            border-color: #d8b24c;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.45),
+                0 0 35px rgba(216,178,76,0.15);
+        }
+
+
+        /* ================= ICON ================= */
+
+        .service-icon {
+            width: 75px;
+            height: 75px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            margin-bottom: 20px;
+
+            font-size: 32px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #173250,
+                    #07111f
+                );
+
+            border: 1px solid rgba(216,178,76,0.4);
+
+            box-shadow:
+                inset 4px 4px 10px rgba(255,255,255,0.04),
+                inset -5px -5px 12px rgba(0,0,0,0.4);
+        }
+
+
+        .service-card h3 {
+            font-size: 19px;
+
+            margin-bottom: 13px;
+        }
+
+        .service-card p {
+            color: #8e9aaa;
+
+            font-size: 13px;
+
+            line-height: 2;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+            padding: 90px 20px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(216,178,76,0.04),
+                    rgba(216,178,76,0.04)
+                );
+
+            border-top: 1px solid rgba(216,178,76,0.1);
+
+            border-bottom: 1px solid rgba(216,178,76,0.1);
+        }
+
+        .cta h2 {
+            font-size: 40px;
+
+            margin-bottom: 18px;
+        }
+
+        .cta h2 span {
+            color: #d8b24c;
+        }
+
+        .cta p {
+            color: #9ca8b7;
+
+            margin-bottom: 30px;
+
+            line-height: 2;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .btn {
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background:
+                linear-gradient(
+                    135deg,
+                    #d8b24c,
+                    #f1d77c
+                );
+
+            color: #07111f;
+
+            box-shadow:
+                0 10px 35px rgba(216,178,76,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 40px rgba(216,178,76,0.35);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 35px 20px;
+
+            text-align: center;
+
+            color: #718092;
+
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #d8b24c;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 25px;
+            }
+
+            .service-card {
+                min-height: 250px;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+
+            .hero {
+                min-height: 60vh;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .services {
+                padding: 50px 5% 80px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+            .service-card {
+                min-height: 230px;
+            }
+
+            .service-icon {
+                width: 65px;
+                height: 65px;
+
+                font-size: 28px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        JrEditsate
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            خانه
+        </a>
+
+        <a href="services.html">
+            خدمات
+        </a>
+
+        </a>
+
+        <a href="pricing.html">
+            تعرفه‌ها
+        </a>
+
+        <a href="about.html">
+            درباره من
+        </a>
+
+        <a href="contact.html">
+            تماس
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            خدمات حرفه‌ای JrEditsate
+        </div>
+
+        <h1>
+            خدمات
+            <span>طراحی سایت</span>
+        </h1>
+
+        <p>
+            از طراحی یک سایت ساده و حرفه‌ای تا ساخت
+            یک وب‌سایت اختصاصی و کامل؛
+            خدمات JrEditsate متناسب با نیاز و هدف پروژه
+            شما ارائه می‌شود.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services">
+
+    <h2 class="section-title">
+        خدمات <span>JrEditsate</span>
+    </h2>
+
+    <p class="section-subtitle">
+        خدمات مورد نیاز برای ساخت یک سایت حرفه‌ای
+    </p>
+
+
+    <div class="service-grid">
+
+
+        <!-- 1 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🏢
+            </div>
+
+            <h3>
+                طراحی سایت شرکتی
+            </h3>
+
+            <p>
+                طراحی سایت حرفه‌ای برای شرکت‌ها،
+                مجموعه‌ها و کسب‌وکارهایی که می‌خواهند
+                حضور آنلاین قدرتمندی داشته باشند.
+            </p>
+
+        </div>
+
+
+
+        <!-- 2 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🛒
+            </div>
+
+            <h3>
+                طراحی سایت فروشگاهی
+            </h3>
+
+            <p>
+                طراحی فروشگاه اینترنتی مدرن برای
+                معرفی محصولات و ایجاد یک تجربه خرید
+                حرفه‌ای برای مشتریان.
+            </p>
+
+        </div>
+
+
+
+        <!-- 3 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                👤
+            </div>
+
+            <h3>
+                طراحی سایت شخصی
+            </h3>
+
+            <p>
+                ساخت سایت شخصی برای معرفی مهارت‌ها،
+                فعالیت‌ها، رزومه و برند شخصی.
+            </p>
+
+        </div>
+
+
+
+        <!-- 4 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🛠️
+            </div>
+
+            <h3>
+                طراحی سایت خدماتی
+            </h3>
+
+            <p>
+                طراحی سایت برای ارائه خدمات،
+                معرفی فعالیت‌ها و جذب مشتریان جدید.
+            </p>
+
+        </div>
+
+
+
+        <!-- 5 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                ⚡
+            </div>
+
+            <h3>
+                طراحی اختصاصی
+            </h3>
+
+            <p>
+                طراحی و توسعه سایت متناسب با ایده،
+                نیاز و امکانات مورد نظر شما.
+            </p>
+
+        </div>
+
+
+
+        <!-- 6 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🔄
+            </div>
+
+            <h3>
+                بازطراحی سایت
+            </h3>
+
+            <p>
+                تغییر ظاهر و ساختار سایت‌های قدیمی
+                برای داشتن یک ظاهر مدرن‌تر و حرفه‌ای‌تر.
+            </p>
+
+        </div>
+
+
+
+        <!-- 7 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🔧
+            </div>
+
+            <h3>
+                پشتیبانی و بروزرسانی
+            </h3>
+
+            <p>
+                بروزرسانی محتوا و ایجاد تغییرات مورد نیاز
+                برای حفظ عملکرد و ظاهر حرفه‌ای سایت.
+            </p>
+
+        </div>
+
+
+
+        <!-- 8 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                📱
+            </div>
+
+            <h3>
+                طراحی واکنش‌گرا
+            </h3>
+
+            <p>
+                طراحی سایت به شکلی که در موبایل،
+                تبلت و کامپیوتر به‌درستی نمایش داده شود.
+            </p>
+
+        </div>
+
+
+
+        <!-- 9 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                ✨
+            </div>
+
+            <h3>
+                بهینه‌سازی ظاهر و تجربه کاربری
+            </h3>
+
+            <p>
+                بهبود ظاهر، ساختار و نحوه استفاده از سایت
+                برای ایجاد تجربه‌ای ساده‌تر و حرفه‌ای‌تر.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <h2>
+        برای سایتت <span>آماده‌ای؟</span>
+    </h2>
+
+    <p>
+        ایده‌ات رو بگو تا مناسب‌ترین مسیر برای
+        طراحی سایتت رو با هم شروع کنیم.
+    </p>
+
+    <a href="cooperation.html" class="btn btn-primary">
+        شروع پروژه
+    </a>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 JrEditsate — تمامی حقوق محفوظ است.
+
+    <br><br>
+
+    Designed & Developed by
+    <strong>JrEditsate</strong>
+
+</footer>
+
+
+</body>
+</html>
