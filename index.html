@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -258,6 +259,80 @@
         line-height: 2.2;
     }
 
+    /* ================= CONTACT ================= */
+
+    .contact-preview {
+        max-width: 900px;
+        margin: 0 auto 100px;
+        padding: 45px 30px;
+        border-radius: 30px;
+        background: rgba(255,255,255,0.035);
+        border: 1px solid rgba(216,178,76,0.15);
+        text-align: center;
+    }
+
+    .contact-preview h2 {
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
+
+    .contact-preview h2 span {
+        color: #d8b24c;
+    }
+
+    .contact-preview p {
+        color: #8995a5;
+        margin-bottom: 30px;
+    }
+
+    .contact-items {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .contact-item {
+        min-width: 250px;
+        padding: 18px 25px;
+        border-radius: 18px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.025);
+        color: #ffffff;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .contact-item:hover {
+        border-color: #d8b24c;
+        transform: translateY(-4px);
+    }
+
+    .contact-label {
+        display: block;
+        color: #8e9aaa;
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .contact-value {
+        color: #d8b24c;
+        font-weight: bold;
+        direction: ltr;
+    }
+
+    .copy-message {
+        margin-top: 18px;
+        color: #d8b24c;
+        font-size: 13px;
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    .copy-message.show {
+        opacity: 1;
+    }
+
     /* ================= CTA ================= */
 
     .cta {
@@ -280,7 +355,6 @@
 
     .cta p {
         color: #9ca8b7;
-        margin-bottom: 10px;
     }
 
     /* ================= FOOTER ================= */
@@ -363,6 +437,16 @@
 
         .about-preview {
             padding: 30px 20px;
+        }
+
+        .contact-preview {
+            margin: 0 15px 70px;
+            padding: 35px 20px;
+        }
+
+        .contact-item {
+            width: 100%;
+            min-width: 0;
         }
 
         .cta h2 {
@@ -472,18 +556,6 @@
 
         <a href="contact.html" class="circle-card">
 
-            <div class="circle-icon">◌</div>
-
-            <h3>تماس</h3>
-
-            <small>
-                ارتباط با JrEditsate
-            </small>
-
-        </a>
-
-        <a href="contact.html" class="circle-card">
-
             <div class="circle-icon">↗</div>
 
             <h3>شروع پروژه</h3>
@@ -494,41 +566,7 @@
 
         </a>
 
-        <a href="services.html" class="circle-card">
-
-            <div class="circle-icon">▣</div>
-
-            <h3>طراحی سایت</h3>
-
-            <small>
-                طراحی حرفه‌ای
-            </small>
-
-        </a>
-
-        <a href="pricing.html" class="circle-card">
-
-            <div class="circle-icon">✦</div>
-
-            <h3>انتخاب پکیج</h3>
-
-            <small>
-                پکیج مناسب پروژه
-            </small>
-
-        </a>
-
-        <!-- گزینه جدید -->
-
-        <a href="services.html" class="circle-card">
-
-            <div class="circle-icon">✧</div>
-
-            <h3>پوستر و لوگو</h3>
-
-            <small>
-                طراحی گرافیکی حرفه‌ای
-            </small>
+       
 
         </a>
 
@@ -549,6 +587,53 @@
         هدف این است که برند و کسب‌وکار شما حرفه‌ای دیده شود،
         اعتماد ایجاد کند و ظاهری متمایز و به‌یادماندنی داشته باشد.
     </p>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-preview">
+
+    <h2>
+        تماس با <span>من</span>
+    </h2>
+
+    <p>
+        برای ارتباط و شروع همکاری می‌توانید از راه‌های زیر با من در تماس باشید.
+        برای کپی کردن، روی هر مورد کلیک کنید.
+    </p>
+
+    <div class="contact-items">
+
+        <div class="contact-item" onclick="copyText('09964243565')">
+
+            <span class="contact-label">
+                شماره تماس
+            </span>
+
+            <span class="contact-value">
+                09964243565
+            </span>
+
+        </div>
+
+        <div class="contact-item" onclick="copyText('@aaryan_jrr17')">
+
+            <span class="contact-label">
+                اینستاگرام
+            </span>
+
+            <span class="contact-value">
+                @aaryan_jrr17
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="copy-message" id="copyMessage">
+        کپی شد ✓
+    </div>
 
 </section>
 
@@ -579,5 +664,26 @@
 
 </footer>
 
+<script>
+function copyText(text) {
+    navigator.clipboard.writeText(text).then(function() {
+
+        const message = document.getElementById("copyMessage");
+
+        message.classList.add("show");
+
+        setTimeout(function() {
+            message.classList.remove("show");
+        }, 1800);
+
+    }).catch(function() {
+
+        alert("کپی انجام نشد؛ لطفاً دوباره امتحان کنید.");
+
+    });
+}
+</script>
+
 </body>
 </html>
+```
